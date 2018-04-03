@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'common.user.plugin'
 
 android {
     compileSdkVersion 27
@@ -32,4 +33,16 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+buildscript {
+    repositories {
+        maven {
+            jcenter()
+            url uri("../repo")
+        }
+    }
+    dependencies {
+        classpath 'common.user.plugin:userplugin:1.0.0'
+    }
 }

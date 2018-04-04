@@ -7,7 +7,9 @@ class UserPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-        System.out.println("========================");
-        System.out.println("hello gradle plugin!");
+        println 'This is a plugin for common user.'
+        project.task('task-user').doFirst {
+            println 'This is a task-user task created by zhouyou.'
+        }
     }
 }

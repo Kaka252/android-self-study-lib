@@ -17,5 +17,9 @@ class UserPlugin implements Plugin<Project> {
                 info.setUserName('郭峰')
             }
         })
+        println 'This is a plugin for common user.'
+        project.task('get-user-info-task').doFirst {
+            println 'This is a get user info task created by zhouyou.'
+        }
     }
 }

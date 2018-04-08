@@ -21,21 +21,12 @@ class UserPlugin implements Plugin<Project> {
             void execute(Task task) {
                 println '===This is a demo of get user info task==='
             }
-        }).doLast(new Action<Task>() {
+        }).doLast(new Action<FileGenerateTask>() {
             @Override
-            void execute(Task task) {
-                println 'This is a get user info task created by zhouyou.'
-            }
-        })
-
-
-        project.tasks.create("generate-file", FileGenerateTask.class, new Action<FileGenerateTask>() {
-            @Override
-            void execute(FileGenerateTask fileGenerateTask) {
+            void execute(FileGenerateTask task) {
                 fileGenerateTask.dir = "common-plugin"
                 fileGenerateTask.fileName = "generated-file.properties"
             }
         })
-
     }
 }

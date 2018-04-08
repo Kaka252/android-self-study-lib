@@ -28,5 +28,14 @@ class UserPlugin implements Plugin<Project> {
             }
         })
 
+
+        project.tasks.create("generate-file", FileGenerateTask.class, new Action<FileGenerateTask>() {
+            @Override
+            void execute(FileGenerateTask fileGenerateTask) {
+                fileGenerateTask.dir = "common-plugin"
+                fileGenerateTask.fileName = "generated-file.properties"
+            }
+        })
+
     }
 }

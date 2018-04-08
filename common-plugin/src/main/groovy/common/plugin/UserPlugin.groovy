@@ -1,5 +1,8 @@
 package common.plugin
 
+import common.plugin.extensions.UserParameters
+import common.plugin.tasks.FileGenerateTask
+import common.plugin.tasks.GetUserInfo
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -26,6 +29,14 @@ class UserPlugin implements Plugin<Project> {
             void execute(FileGenerateTask task) {
                 fileGenerateTask.dir = "common-plugin"
                 fileGenerateTask.fileName = "generated-file.properties"
+            }
+        })
+
+        project.extensions.create("user-params", UserParameters)
+        project.afterEvaluate(new Action<Project>() {
+            @Override
+            void execute(Project aProject) {
+
             }
         })
     }

@@ -1,7 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
-dependencies{
+dependencies {
     compile gradleApi()
     compile localGroovy()
 }

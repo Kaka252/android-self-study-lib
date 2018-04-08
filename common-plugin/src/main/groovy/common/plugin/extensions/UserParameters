@@ -1,6 +1,6 @@
 package common.plugin.extensions
 
 class UserParameters {
-    def userName = '祥东'
-    def position = 'Android码农'
+    def userName
+    def position
 }

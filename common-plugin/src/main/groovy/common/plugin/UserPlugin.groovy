@@ -1,6 +1,5 @@
 package common.plugin
 
-import common.plugin.extensions.UserParameters
 import common.plugin.tasks.FileGenerateTask
 import common.plugin.tasks.GetUserInfo
 import org.gradle.api.Action
@@ -32,11 +31,16 @@ class UserPlugin implements Plugin<Project> {
             }
         })
 
-        project.extensions.create("user-params", UserParameters)
+        project.extensions.create("userParams", UserParameters)
         project.afterEvaluate(new Action<Project>() {
             @Override
             void execute(Project aProject) {
-
+//                aProject.tasks.create("user-params-print-task", CustomUserParamsTask.class, new Action<CustomUserParamsTask>() {
+//                    @Override
+//                    void execute(CustomUserParamsTask customUserParamsTask) {
+//                        customUserParamsTask.printUserParams()
+//                    }
+//                })
             }
         })
     }

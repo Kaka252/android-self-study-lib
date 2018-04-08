@@ -7,6 +7,6 @@ class CustomUserParamsTask extends DefaultTask {
 
     @TaskAction
     void printUserParams() {
-        println ''
+        println "我的名字叫${project.userParams.userName}, 我的工作是${project.userParams.position}"
     }
 }

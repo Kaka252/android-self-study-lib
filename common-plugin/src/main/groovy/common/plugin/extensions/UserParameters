@@ -1,6 +1,0 @@
-package common.plugin.extensions
-
-class UserParameters {
-    def userName
-    def position
-}
